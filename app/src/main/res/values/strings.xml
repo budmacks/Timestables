@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Timetable app</string>
+    <string name="label1">Factor 1</string>
+    <string name="label2">Factor 2</string>
+    <string name="resultbutton">Show Result</string>
+</resources>
