@@ -20,7 +20,9 @@ class DetailActivity : AppCompatActivity() {
         }
 
         val showAnswer = findViewById<TextView>(R.id.result)
-        val answer = intent.getIntExtra("result", 0)
+        val factor1 = intent.getIntExtra("factor1", 0)
+        val factor2 = intent.getIntExtra("factor2", 0)
+        val answer = factor1 * factor2
         showAnswer.text = answer.toString()
 
     }

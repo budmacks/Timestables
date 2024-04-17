@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         val factor1 : Int = Random.nextInt(1, 13)
         val factor2 : Int = Random.nextInt(1, 13)
-        val answer : Int = factor1 * factor2
 
         val factor1View = findViewById<TextView>(R.id.factor1)
         val factor2View = findViewById<TextView>(R.id.factor2)
@@ -33,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         val showResult = findViewById<Button>(R.id.resultButton)
         showResult.setOnClickListener {
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("result", answer)
+            intent.putExtra("factor1", factor1)
+            intent.putExtra("factor2", factor2)
             startActivity(intent)
         }
 
