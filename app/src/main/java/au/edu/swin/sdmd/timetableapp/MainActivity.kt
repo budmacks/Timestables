@@ -32,8 +32,7 @@ class MainActivity : AppCompatActivity() {
         val showResult = findViewById<Button>(R.id.resultButton)
         showResult.setOnClickListener {
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("factor1", factor1)
-            intent.putExtra("factor2", factor2)
+            intent.putExtra("result", Result(factor1 * factor2))
             startActivity(intent)
         }
 

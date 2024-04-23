@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 
 class DetailActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,13 +22,13 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
+        val result = intent.getParcelableExtra<Result>("result")
         val showAnswer = findViewById<TextView>(R.id.result)
-        val factor1 = intent.getIntExtra("factor1", 0)
-        val factor2 = intent.getIntExtra("factor2", 0)
-        val answer = factor1 * factor2
-        showAnswer.text = answer.toString()
+        showAnswer.text = result?.opResult.toString()
+
 
     }
 }
+
 
 
